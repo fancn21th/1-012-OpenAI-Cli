@@ -10,7 +10,7 @@
 const init = require('./utils/init');
 const cli = require('./utils/cli');
 const log = require('./utils/log');
-const talk = require('./utils/talk');
+const talk = require('./utils/talkie');
 
 const input = cli.input;
 const flags = cli.flags;
