@@ -1,18 +1,24 @@
 const { Configuration, OpenAIApi } = require('openai');
+let configuration = null;
+let openai = null;
 
 module.exports = async ({ prompt, apiKey }) => {
-	const configuration = new Configuration({
-		apiKey
-	});
+	if (apiKey) {
+		configuration = new Configuration({
+			apiKey
+		});
 
-	const openai = new OpenAIApi(configuration);
+		openai = new OpenAIApi(configuration);
+	}
 
-	const response = await openai.createCompletion({
-		model: 'text-davinci-003',
-		prompt,
-		max_tokens: 7,
-		temperature: 0
-	});
+	if (openai) {
+		const response = await openai.createCompletion({
+			model: 'text-davinci-003',
+			prompt,
+			max_tokens: 7,
+			temperature: 0
+		});
 
-	return response;
+		return response;
+	}
 };
