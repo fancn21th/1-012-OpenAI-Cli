@@ -1,7 +1,7 @@
 {
 	"name": "oh-openai-cli",
 	"description": "openai with cli as ui",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"license": "MIT",
 	"bin": {
 		"oh-openai-cli": "index.js",
