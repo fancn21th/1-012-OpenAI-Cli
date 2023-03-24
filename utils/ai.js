@@ -16,7 +16,7 @@ module.exports = async ({ prompt, apiKey }) => {
 	if (openai) {
 		try {
 			const response = await openai.createCompletion({
-				model: 'text-davinci-003',
+				model: 'gpt-3.5-turbo',
 				prompt,
 				max_tokens: 1000,
 				temperature: 0
